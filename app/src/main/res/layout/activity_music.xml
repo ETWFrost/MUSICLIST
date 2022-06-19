@@ -1,33 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/music_bg"
-    tools:context=".Music.MusicActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:visibility="visible"
+    tools:context=".Music.MusicActivity">
+
     <RelativeLayout
-        android:background="@mipmap/search_background"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginBottom="60dp">
+        android:layout_marginBottom="60dp"
+        android:background="@mipmap/search_background">
+
         <ImageView
             android:id="@+id/btn_exit"
             android:layout_width="80dp"
             android:layout_height="40dp"
-            android:src="@drawable/btn_exit"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:layout_centerVertical="true"/>
+            android:src="@drawable/btn_exit" />
+
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="正在播放"
+            android:textColor="@color/DeepSkyBlue"
             android:textSize="25sp"
-            android:textStyle="bold"
-            android:textColor="@color/DeepSkyBlue"/>
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <ImageView
@@ -36,7 +40,8 @@
         android:layout_height="250dp"
         android:layout_gravity="center"
         android:layout_margin="15dp"
-        android:src="@drawable/music0"/>
+        android:src="@drawable/music0" />
+
     <TextView
         android:id="@+id/song_name"
         android:layout_width="wrap_content"
@@ -44,71 +49,124 @@
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
         android:text="光年之外"
+        android:textColor="@color/DarkCyan"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/DarkCyan"/>
+        android:textStyle="bold" />
+
     <SeekBar
         android:id="@+id/sb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="8dp"
         android:paddingRight="8dp">
+
         <TextView
             android:id="@+id/tv_progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="00:00"/>
+            android:text="00:00" />
+
         <TextView
             android:id="@+id/tv_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="00:00"/>
+            android:text="00:00" />
     </RelativeLayout>
+
     <RelativeLayout
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="65dp"
+        android:layout_marginTop="10dp">
+
         <Button
             android:id="@+id/btn_continue_play"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/play"/>
+            android:background="@drawable/play" />
+
         <Button
             android:id="@+id/btn_pause"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/pause"/>
+            android:background="@drawable/pause" />
+
         <Button
             android:id="@+id/btn_play"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/play" />
+
         <Button
             android:id="@+id/btn_pre"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@drawable/pre"
             android:layout_centerVertical="true"
             android:layout_marginRight="30dp"
-            android:layout_toLeftOf="@id/btn_play"/>
+            android:layout_toLeftOf="@id/btn_play"
+            android:background="@drawable/pre" />
 
         <Button
             android:id="@+id/btn_next"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@drawable/next"
             android:layout_centerVertical="true"
             android:layout_marginLeft="30dp"
-            android:layout_toRightOf="@id/btn_play"/>
+            android:layout_toRightOf="@id/btn_play"
+            android:background="@drawable/next" />
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/aixin"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
+            android:layout_alignEnd="@+id/love"
+            android:layout_alignRight="@+id/love"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            app:srcCompat="@drawable/aixin" />
+
+        <Button
+            android:id="@+id/love"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/shouc"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/mode"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/danqu" />
+
+        <ImageView
+            android:id="@+id/mode1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/liebiaoxunhuang" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>

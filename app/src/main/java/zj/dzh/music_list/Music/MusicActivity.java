@@ -42,6 +42,10 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
     private Button next;        //下一首按钮
     private ImageView exit;        //退出按钮
     private ImageView iv_music; //歌手图片框
+    private Button love;
+    private Button mode;
+    private ImageView aixin;
+    private ImageView mode1;
 
     Intent intent1, intent2;    //定义两个意图
     MyServiceConn conn;         //服务连接
@@ -76,7 +80,8 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
         pre = findViewById(R.id.btn_pre);
         next = findViewById(R.id.btn_next);
         exit = findViewById(R.id.btn_exit);
-
+        love = findViewById(R.id.love);
+        mode = findViewById(R.id.mode);
         //依次设置监听器
         play.setOnClickListener(this);
         pause.setOnClickListener(this);
@@ -84,7 +89,8 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
         pre.setOnClickListener(this);
         next.setOnClickListener(this);
         exit.setOnClickListener(this);
-
+        love.setOnClickListener(this);
+        mode.setOnClickListener(this);
         //创建意图对象
         intent2 = new Intent(this, MusicService.class);
         conn = new MyServiceConn();//创建服务连接对象
@@ -256,6 +262,14 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
                 animator.start();
                 break;
 
+            case R.id.love://继续播放按钮点击事件
+               aixin.setVisibility(View.VISIBLE);
+                break;
+
+            case R.id.mode://继续播放按钮点击事件
+                mode1.setVisibility(View.VISIBLE);
+                mode.setVisibility(View.INVISIBLE);
+                break;
             case R.id.btn_exit://退出按钮点击事件
                 unbind(isUnbind);
                 isUnbind = true;
